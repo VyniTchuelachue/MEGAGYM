@@ -1,0 +1,42 @@
+{
+  "sample": true,
+  "note": "Planning d'exemple. Remplacez les séances par le vrai planning du club : day = 1 (lundi) à 7 (dimanche), start = heure de Douala, duration = minutes, intensity = 1 (doux) à 3 (intense).",
+  "classes": {
+    "zumba": { "name": { "fr": "Zumba", "en": "Zumba" }, "intensity": 2 },
+    "hiit": { "name": { "fr": "HIIT", "en": "HIIT" }, "intensity": 3 },
+    "rpm": { "name": { "fr": "RPM", "en": "RPM" }, "intensity": 3 },
+    "pilates": { "name": { "fr": "Pilates", "en": "Pilates" }, "intensity": 1 },
+    "renfo": { "name": { "fr": "Renforcement musculaire", "en": "Body conditioning" }, "intensity": 2 }
+  },
+  "sessions": [
+    { "day": 1, "start": "06:30", "duration": 45, "class": "hiit" },
+    { "day": 1, "start": "12:30", "duration": 45, "class": "renfo" },
+    { "day": 1, "start": "18:00", "duration": 45, "class": "rpm" },
+    { "day": 1, "start": "19:00", "duration": 60, "class": "zumba" },
+
+    { "day": 2, "start": "06:30", "duration": 45, "class": "rpm" },
+    { "day": 2, "start": "18:00", "duration": 60, "class": "pilates" },
+    { "day": 2, "start": "19:15", "duration": 45, "class": "hiit" },
+
+    { "day": 3, "start": "06:30", "duration": 45, "class": "renfo" },
+    { "day": 3, "start": "12:30", "duration": 45, "class": "pilates" },
+    { "day": 3, "start": "18:00", "duration": 60, "class": "zumba" },
+    { "day": 3, "start": "19:15", "duration": 45, "class": "rpm" },
+
+    { "day": 4, "start": "06:30", "duration": 45, "class": "hiit" },
+    { "day": 4, "start": "18:00", "duration": 60, "class": "renfo" },
+    { "day": 4, "start": "19:15", "duration": 60, "class": "zumba" },
+
+    { "day": 5, "start": "06:30", "duration": 45, "class": "rpm" },
+    { "day": 5, "start": "12:30", "duration": 30, "class": "hiit" },
+    { "day": 5, "start": "18:00", "duration": 60, "class": "zumba" },
+    { "day": 5, "start": "19:15", "duration": 60, "class": "pilates" },
+
+    { "day": 6, "start": "08:00", "duration": 60, "class": "zumba" },
+    { "day": 6, "start": "09:15", "duration": 60, "class": "renfo" },
+    { "day": 6, "start": "10:30", "duration": 45, "class": "rpm" },
+
+    { "day": 7, "start": "09:00", "duration": 60, "class": "pilates" },
+    { "day": 7, "start": "10:15", "duration": 60, "class": "zumba" }
+  ]
+}
