@@ -71,6 +71,12 @@ export const Phone = (props) => (
   </Icon>
 );
 
+export const Check = (props) => (
+  <Icon {...props}>
+    <path d="M4.5 12.5 9.5 17.5 19.5 6.5" strokeWidth="2" />
+  </Icon>
+);
+
 export const Menu = (props) => (
   <Icon {...props}>
     <path d="M4 7h16M4 12h16M4 17h16" />

@@ -3,6 +3,7 @@ import { useLang } from '../lang.js';
 import Button from './Button.jsx';
 import { icons } from './Icons.jsx';
 import Photo from './Photo.jsx';
+import Plans from './Plans.jsx';
 import Poster from './Poster.jsx';
 
 export default function Membership({ onAsk }) {
@@ -13,7 +14,7 @@ export default function Membership({ onAsk }) {
         <div>
           <Poster lines={t.membership.lines} surface="light" />
           <p className="mt-7 text-lg leading-relaxed">{t.membership.text}</p>
-          <Button href="#contact" variant="dark" onClick={() => onAsk('abonnement')} className="mt-8">
+          <Button href="#tarifs" variant="dark" className="mt-8">
             {t.membership.cta}
           </Button>
         </div>
@@ -40,6 +41,10 @@ export default function Membership({ onAsk }) {
             </ul>
           </div>
         </div>
+      </div>
+
+      <div className="wrap">
+        <Plans onAsk={onAsk} />
       </div>
     </section>
   );

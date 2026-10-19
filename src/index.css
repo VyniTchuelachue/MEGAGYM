@@ -1,8 +1,12 @@
 @import "@fontsource-variable/archivo/wdth.css";
+@import "@fontsource/poppins/latin-700.css";
+@import "@fontsource/poppins/latin-800.css";
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Archivo Variable", ui-sans-serif, system-ui, sans-serif;
+  /* Only for the wordmark, which the club sets in a geometric lowercase sans. */
+  --font-logo: "Poppins", ui-sans-serif, system-ui, sans-serif;
 
   --color-noir: #0a0a0a;
   --color-carbone: #151515;

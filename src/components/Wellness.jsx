@@ -17,11 +17,9 @@ export default function Wellness({ onAsk }) {
             {t.wellness.cta}
           </Button>
         </div>
-        {/* The one colour photograph on the page: training is black and white, recovery is warm. */}
         <Photo
           src={images.hammam}
           alt={t.wellness.alt}
-          mono={false}
           sizes="(min-width: 64rem) 60vw, 100vw"
           className="-mx-5 h-72 w-[calc(100%+2.5rem)] max-w-none object-cover sm:-mx-8 sm:h-96 sm:w-[calc(100%+4rem)] lg:mx-0 lg:h-full lg:w-[calc(100%+max(2rem,(100vw-78rem)/2+2rem))]"
         />

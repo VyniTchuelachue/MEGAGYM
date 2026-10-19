@@ -1,6 +1,8 @@
 import { useRef, useState } from 'react';
 import { club } from '../data/club.js';
+import { plans } from '../data/plans.js';
 import { useLang } from '../lang.js';
+import { formatPrice } from '../lib/format.js';
 import Button from './Button.jsx';
 import Poster from './Poster.jsx';
 
@@ -15,13 +17,15 @@ function FieldError({ id, children }) {
   );
 }
 
-function ContactForm({ interest, onInterest }) {
+function ContactForm({ interest, onInterest, plan, onPlan }) {
   const { t, lang } = useLang();
   const form = useRef(null);
   const [values, setValues] = useState(EMPTY);
   const [errors, setErrors] = useState({});
   const [failure, setFailure] = useState(null);
   const [status, setStatus] = useState('idle');
+  const membership = interest === 'abonnement';
+  const chosenPlan = membership && plan ? t.plans.items[plan].name : '';
 
   const set = (name) => (event) => setValues((current) => ({ ...current, [name]: event.target.value }));
 
@@ -49,7 +53,7 @@ function ContactForm({ interest, onInterest }) {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...values, interest, lang }),
+        body: JSON.stringify({ ...values, interest, plan: membership ? plan : '', lang }),
       });
       if (response.status === 201) {
         setStatus('sent');
@@ -72,7 +76,9 @@ function ContactForm({ interest, onInterest }) {
         <h3 className="text-5xl font-extrabold uppercase leading-none text-jaune [font-stretch:62%]">
           {t.contact.sentTitle}
         </h3>
-        <p className="mt-4 max-w-[30rem] text-lg">{t.contact.sentText(values.phone)}</p>
+        <p className="mt-4 max-w-[30rem] text-lg">
+          {t.contact.sentText(values.phone)} {chosenPlan && t.contact.planChosen(chosenPlan)}
+        </p>
         <Button
           variant="outline"
           className="mt-8"
@@ -141,6 +147,20 @@ function ContactForm({ interest, onInterest }) {
         </select>
       </label>
 
+      {membership && (
+        <label className="block font-semibold sm:col-span-2">
+          {t.contact.plan}
+          <select name="plan" value={plan} onChange={(event) => onPlan(event.target.value)} className={field}>
+            <option value="">{t.contact.planUndecided}</option>
+            {plans.map(({ id, price }) => (
+              <option key={id} value={id}>
+                {t.contact.planOption(t.plans.items[id].name, formatPrice(price, lang))}
+              </option>
+            ))}
+          </select>
+        </label>
+      )}
+
       <label className="block font-semibold sm:col-span-2">
         {t.contact.message} <span className="font-normal">({t.contact.optional})</span>
         <textarea
@@ -178,7 +198,7 @@ function ContactForm({ interest, onInterest }) {
   );
 }
 
-export default function Contact({ interest, onInterest }) {
+export default function Contact({ interest, onInterest, plan, onPlan }) {
   const { t } = useLang();
   return (
     <section id="contact" className="surface-yellow bg-jaune text-noir">
@@ -196,7 +216,7 @@ export default function Contact({ interest, onInterest }) {
             </Button>
           </div>
         </div>
-        <ContactForm interest={interest} onInterest={onInterest} />
+        <ContactForm interest={interest} onInterest={onInterest} plan={plan} onPlan={onPlan} />
       </div>
     </section>
   );

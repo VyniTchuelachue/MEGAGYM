@@ -35,7 +35,7 @@ export default {
     sub: 'Your best level starts here, in Bonamoussadi.',
     primary: 'Discover the club',
     secondary: 'Our memberships',
-    alt: 'A member curls a dumbbell on the weights floor',
+    alt: 'Megagym’s new training room and its black and yellow Technogym machines',
   },
   features: [
     {
@@ -46,7 +46,7 @@ export default {
     {
       icon: 'coach',
       title: 'Personal coaching',
-      text: 'Qualified coaches to guide you towards your goals.',
+      text: 'Certified coaches, from Cameroon and abroad, to guide you.',
     },
     {
       icon: 'lotus',
@@ -61,11 +61,12 @@ export default {
     ],
     text: 'A modern, motivating and friendly space in the heart of B’ssadi Galleries, built to help you get stronger, healthier and more confident, every day.',
     cta: 'Explore our spaces',
-    alt: 'The weights floor, with machines and free weights',
+    alt: 'The new room’s training floor, its mirrors and a pillar in the club’s colours',
     facts: [
+      { value: 'Since 2021', label: 'in the heart of Bonamoussadi' },
       { value: 'From 5:30 am', label: 'open 7 days a week' },
+      { value: '1,000', unit: 'm²', label: 'and more, across two rooms' },
       { value: '4.5 out of 5', label: 'from 56 Google reviews' },
-      { value: '3 floors', label: 'inside B’ssadi Galleries' },
     ],
   },
   spaces: {
@@ -74,23 +75,35 @@ export default {
       {
         key: 'musculation',
         title: 'Strength training',
-        text: 'Build strength, shape your body and reach your goals.',
-        alt: 'A member, seen from behind, pulls down a lat bar',
+        text: 'A Free Weight Zone and Technogym machines, for beginners and experts alike.',
+        alt: 'A member does push-ups resting on dumbbells',
       },
       {
         key: 'cardio',
         title: 'Cardio training',
         text: 'Improve your endurance and boost your energy.',
-        alt: 'A member runs on a treadmill',
+        alt: 'The treadmills and bikes of the cardio room',
       },
       {
         key: 'cours',
         title: 'Group classes',
         text: 'Zumba, HIIT, RPM, Pilates, conditioning… Dynamic sessions for everyone.',
-        alt: 'A group trains with dumbbells during a class',
+        alt: 'An RPM class on the club’s yellow bikes',
         link: { href: '#planning', label: 'See the timetable' },
       },
     ],
+  },
+  gallery: {
+    title: 'Inside the club',
+    text: 'Photos taken at Megagym, in B’ssadi Galleries.',
+    alts: {
+      'cardio-rameurs': 'Two members on a bike and a rower, under the club’s banners',
+      'coaching-poids': 'A member pushes a landmine bar, a coach beside her',
+      'cours-sol': 'A group class working on floor mats',
+      'musculation-poulie': 'The machine area mid-session',
+      'cardio-velos': 'A row of bikes facing the windows',
+      'cours-ballons': 'A conditioning class with balls and dumbbells',
+    },
   },
   classes: {
     lines: [
@@ -100,7 +113,7 @@ export default {
     ],
     sub: 'More energy. More confidence. A better version of you.',
     cta: 'See the classes',
-    alt: 'A group class mid-session, arms raised',
+    alt: 'A group class mid-session in the main room',
   },
   planning: {
     title: 'This week’s timetable',
@@ -118,9 +131,9 @@ export default {
       { text: 'Coaching built' },
       { text: 'around you.', accent: true },
     ],
-    text: 'Our qualified coaches support you with programmes matched to your goals, whether you are just starting or already experienced.',
+    text: 'Our certified coaches, from Cameroon and abroad, support you with programmes matched to your goals, whether you are just starting or already experienced.',
     cta: 'Talk to a coach',
-    alt: 'A coach guides a member on a machine',
+    alt: 'A coach guides a member through a floor exercise',
   },
   wellness: {
     lines: [
@@ -138,15 +151,53 @@ export default {
       { text: 'your rhythm.', accent: true },
     ],
     text: 'Plans that fit your needs and your way of life. Join a motivated community and reach your goals in the best conditions.',
-    cta: 'Request our plans',
-    alt: 'A member ready for her session',
-    includedTitle: 'Your membership includes',
+    cta: 'See the prices',
+    alt: 'A member does a dumbbell row during a class',
+    includedTitle: 'At Megagym',
     included: [
-      { icon: 'calendar', text: 'Access to the training floors' },
-      { icon: 'group', text: 'Group classes included' },
-      { icon: 'coach', text: 'Follow-up with qualified coaches' },
-      { icon: 'diamond', text: 'Access to the hammam and wellness area' },
+      { icon: 'calendar', text: 'Open 7 days a week, from 5:30 am' },
+      { icon: 'coach', text: 'Certified coaches, from Cameroon and abroad' },
+      { icon: 'dumbbell', text: 'Latest-generation Technogym machines' },
+      { icon: 'lotus', text: 'Two Moroccan-style hammams' },
     ],
+  },
+  plans: {
+    title: 'Prices',
+    intro: 'Two training rooms, one monthly membership. Pick your plan and the team calls you back to complete registration and payment.',
+    perMonth: 'FCFA / month',
+    registration: (amount) => `+ ${amount} FCFA registration fee, paid once`,
+    items: {
+      standard: {
+        name: 'Standard',
+        tagline: 'The club’s first room: 615 m² for strength training and group classes.',
+        features: [
+          'Unlimited access to the first room',
+          'Strength training room and group class studio',
+          'Open 7 days a week from 5:30 am',
+        ],
+        cta: 'Join Standard',
+      },
+      vip: {
+        name: 'VIP',
+        badge: 'Premium',
+        tagline: 'The new room: 441 m² of Technogym equipment, with hammams.',
+        features: [
+          'Unlimited access to the new room',
+          'Free Weight Zone and Technogym machines',
+          'Two Moroccan-style hammams',
+        ],
+        cta: 'Join VIP',
+      },
+    },
+    offer: {
+      lines: [
+        { text: 'Commit to' },
+        { text: '3 months or more', accent: true },
+      ],
+      text: 'Sign up for 3 months or more and get extra months free.',
+      cta: 'Ask about the offer',
+    },
+    note: 'Monthly prices in FCFA. The registration fee is paid only when you first join. Terms to be confirmed at the club’s front desk.',
   },
   location: {
     lines: [
@@ -184,6 +235,10 @@ export default {
       hammam: 'The hammam',
       autre: 'Something else',
     },
+    plan: 'Plan',
+    planUndecided: 'Not sure yet',
+    planOption: (name, price) => `${name}: ${price} FCFA / month`,
+    planChosen: (name) => `Plan chosen: ${name}.`,
     message: 'Your message',
     optional: 'optional',
     submit: 'Send my request',

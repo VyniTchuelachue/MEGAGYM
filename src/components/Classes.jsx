@@ -61,7 +61,7 @@ function Planning() {
       : [];
 
   return (
-    <div id="planning" className="scroll-mt-20 bg-carbone">
+    <div id="planning" className="bg-carbone">
       <div className="wrap py-14 lg:py-20">
         <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
           <div>

@@ -4,6 +4,7 @@ import Classes from './components/Classes.jsx';
 import Coaching from './components/Coaching.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
+import Gallery from './components/Gallery.jsx';
 import Header, { TopBar } from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import Location from './components/Location.jsx';
@@ -13,8 +14,14 @@ import Wellness from './components/Wellness.jsx';
 import { useLang } from './lang.js';
 
 export default function App() {
-  // What the visitor is asking about; buttons across the page preselect it in the contact form.
+  // What the visitor is asking about, and which plan if it is a membership;
+  // buttons across the page preselect both in the contact form.
   const [interest, setInterest] = useState('abonnement');
+  const [plan, setPlan] = useState('');
+  const ask = (nextInterest, nextPlan = '') => {
+    setInterest(nextInterest);
+    setPlan(nextPlan);
+  };
   const { t } = useLang();
 
   return (
@@ -26,17 +33,18 @@ export default function App() {
         {t.nav.skip}
       </a>
       <TopBar />
-      <Header onAsk={setInterest} />
+      <Header onAsk={ask} />
       <main id="contenu">
         <Hero />
         <About />
         <Spaces />
+        <Gallery />
         <Classes />
-        <Coaching onAsk={setInterest} />
-        <Wellness onAsk={setInterest} />
-        <Membership onAsk={setInterest} />
+        <Coaching onAsk={ask} />
+        <Wellness onAsk={ask} />
+        <Membership onAsk={ask} />
         <Location />
-        <Contact interest={interest} onInterest={setInterest} />
+        <Contact interest={interest} onInterest={setInterest} plan={plan} onPlan={setPlan} />
       </main>
       <Footer />
     </>

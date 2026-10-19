@@ -85,7 +85,7 @@ export default function Header({ onAsk }) {
 
           <div className="flex items-center gap-2">
             <div className="hidden sm:block">
-              <Button href="#contact" onClick={() => onAsk('abonnement')}>
+              <Button href="#tarifs" onClick={() => onAsk('abonnement')}>
                 {t.nav.cta}
               </Button>
             </div>
@@ -142,7 +142,7 @@ export default function Header({ onAsk }) {
               {club.phone.display}
             </a>
             <Button
-              href="#contact"
+              href="#tarifs"
               onClick={() => {
                 onAsk('abonnement');
                 setOpen(false);

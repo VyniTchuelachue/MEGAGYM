@@ -25,11 +25,15 @@ export default function About() {
           />
         </div>
 
-        <dl className="mt-12 grid gap-x-10 gap-y-6 sm:grid-cols-3 lg:mt-16">
+        <dl className="mt-12 grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
           {t.about.facts.map((fact) => (
             <div key={fact.label} className="flex flex-col-reverse border-t-2 border-noir pt-4">
               <dt className="mt-1">{fact.label}</dt>
-              <dd className="text-4xl font-extrabold uppercase [font-stretch:62%] sm:text-5xl">{fact.value}</dd>
+              <dd className="text-4xl font-extrabold uppercase [font-stretch:62%] sm:text-5xl">
+                {fact.value}
+                {/* Units keep their own case: uppercase would turn m² into M². */}
+                {fact.unit && <span className="normal-case"> {fact.unit}</span>}
+              </dd>
             </div>
           ))}
         </dl>

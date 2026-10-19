@@ -4,6 +4,7 @@ import { existsSync } from 'node:fs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { planIds } from '../src/data/plans.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dataDir = path.join(root, 'server', 'data');
@@ -64,12 +65,15 @@ function validate(body) {
   const digits = phone.replace(/\D/g, '');
   if (name.length < 2) errors.name = 'required';
   if (digits.length < 8 || digits.length > 15) errors.phone = 'invalid';
+  const interest = INTERESTS.includes(body.interest) ? body.interest : 'autre';
   return {
     errors,
     value: {
       name,
       phone,
-      interest: INTERESTS.includes(body.interest) ? body.interest : 'autre',
+      interest,
+      // Only a membership request carries a plan.
+      plan: interest === 'abonnement' && planIds.includes(body.plan) ? body.plan : '',
       message: clean(body.message, 1000),
       lang: body.lang === 'en' ? 'en' : 'fr',
     },
@@ -108,7 +112,7 @@ app.post('/api/contact', async (req, res, next) => {
 
     const entry = { id: randomUUID(), receivedAt: new Date().toISOString(), ...value };
     await saveRequest(entry);
-    console.log(`[contact] ${entry.receivedAt} ${entry.name} (${entry.phone}) — ${entry.interest}`);
+    console.log(`[contact] ${entry.receivedAt} ${entry.name} (${entry.phone}) — ${entry.interest}${entry.plan ? ` (${entry.plan})` : ''}`);
     res.status(201).json({ ok: true });
   } catch (err) {
     next(err);

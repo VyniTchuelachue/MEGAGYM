@@ -35,7 +35,7 @@ export default {
     sub: 'Votre meilleur niveau commence ici, à Bonamoussadi.',
     primary: 'Découvrir le club',
     secondary: 'Nos abonnements',
-    alt: 'Un adhérent soulève un haltère dans une salle de musculation',
+    alt: 'La nouvelle salle de Megagym et ses machines Technogym noires et jaunes',
   },
   features: [
     {
@@ -46,7 +46,7 @@ export default {
     {
       icon: 'coach',
       title: 'Coaching personnalisé',
-      text: 'Des coachs qualifiés pour vous guider vers vos objectifs.',
+      text: 'Des coachs certifiés, nationaux et internationaux, pour vous guider.',
     },
     {
       icon: 'lotus',
@@ -61,11 +61,12 @@ export default {
     ],
     text: 'Un espace moderne, motivant et convivial au cœur de B’ssadi Galleries, pensé pour vous aider à être plus fort, plus sain et plus confiant, chaque jour.',
     cta: 'Découvrir notre univers',
-    alt: 'Le plateau de musculation, machines et charges libres',
+    alt: 'Le plateau de la nouvelle salle, ses miroirs et un pilier aux couleurs du club',
     facts: [
+      { value: 'Depuis 2021', label: 'au cœur de Bonamoussadi' },
       { value: 'Dès 5h30', label: 'ouvert 7 jours sur 7' },
+      { value: '1 000', unit: 'm²', label: 'et plus, sur deux salles' },
       { value: '4,5 sur 5', label: 'd’après 56 avis Google' },
-      { value: '3 niveaux', label: 'au centre B’ssadi Galleries' },
     ],
   },
   spaces: {
@@ -74,23 +75,35 @@ export default {
       {
         key: 'musculation',
         title: 'Musculation',
-        text: 'Renforcez votre corps, sculptez votre physique et atteignez vos objectifs.',
-        alt: 'Un adhérent, vu de dos, tire une barre à la poulie haute',
+        text: 'Une Free Weight Zone pour les charges libres et des machines Technogym, du débutant au confirmé.',
+        alt: 'Un adhérent fait des pompes en appui sur des haltères',
       },
       {
         key: 'cardio',
         title: 'Cardio-training',
         text: 'Améliorez votre endurance et boostez votre énergie.',
-        alt: 'Une adhérente court sur un tapis de course',
+        alt: 'Les tapis de course et vélos de la salle cardio',
       },
       {
         key: 'cours',
         title: 'Cours collectifs',
         text: 'Zumba, HIIT, RPM, Pilates, renforcement… Des séances dynamiques pour tous.',
-        alt: 'Un groupe s’entraîne avec des haltères pendant un cours',
+        alt: 'Un cours de RPM sur les vélos jaunes du club',
         link: { href: '#planning', label: 'Voir le planning' },
       },
     ],
+  },
+  gallery: {
+    title: 'Dans la salle',
+    text: 'Des photos prises chez Megagym, à B’ssadi Galleries.',
+    alts: {
+      'cardio-rameurs': 'Deux adhérents sur un vélo et un rameur, sous les bannières du club',
+      'coaching-poids': 'Une adhérente pousse une barre guidée au sol, un coach à ses côtés',
+      'cours-sol': 'Un cours collectif au sol, sur tapis',
+      'musculation-poulie': 'La zone de musculation guidée en pleine séance',
+      'cardio-velos': 'Une rangée de vélos face aux baies vitrées',
+      'cours-ballons': 'Un cours de renforcement avec ballons et haltères',
+    },
   },
   classes: {
     lines: [
@@ -100,7 +113,7 @@ export default {
     ],
     sub: 'Plus d’énergie. Plus de confiance. Une meilleure version de vous.',
     cta: 'Voir les cours',
-    alt: 'Un cours collectif, bras levés, en pleine séance',
+    alt: 'Un cours collectif en pleine séance dans la grande salle',
   },
   planning: {
     title: 'Planning de la semaine',
@@ -118,9 +131,9 @@ export default {
       { text: 'Un accompagnement' },
       { text: 'sur-mesure.', accent: true },
     ],
-    text: 'Nos coachs qualifiés vous accompagnent avec des programmes adaptés à vos objectifs, que vous soyez débutant ou confirmé.',
+    text: 'Nos coachs certifiés, nationaux et internationaux, vous accompagnent avec des programmes adaptés à vos objectifs, que vous soyez débutant ou confirmé.',
     cta: 'Parler à un coach',
-    alt: 'Un coach accompagne une adhérente sur une machine',
+    alt: 'Un coach accompagne une adhérente pendant un exercice au sol',
   },
   wellness: {
     lines: [
@@ -138,15 +151,53 @@ export default {
       { text: 'votre rythme.', accent: true },
     ],
     text: 'Des formules adaptées à vos besoins et à votre mode de vie. Rejoignez une communauté motivée et atteignez vos objectifs dans les meilleures conditions.',
-    cta: 'Demander les formules',
-    alt: 'Une adhérente prête pour sa séance',
-    includedTitle: 'Votre abonnement comprend',
+    cta: 'Voir les tarifs',
+    alt: 'Un adhérent fait un rowing avec haltère pendant un cours',
+    includedTitle: 'Chez Megagym',
     included: [
-      { icon: 'calendar', text: 'Accès aux espaces d’entraînement' },
-      { icon: 'group', text: 'Cours collectifs inclus' },
-      { icon: 'coach', text: 'Suivi avec des coachs qualifiés' },
-      { icon: 'diamond', text: 'Accès au hammam et à l’espace bien-être' },
+      { icon: 'calendar', text: 'Ouvert 7 jours sur 7, dès 5h30' },
+      { icon: 'coach', text: 'Des coachs certifiés, nationaux et internationaux' },
+      { icon: 'dumbbell', text: 'Des machines Technogym dernière génération' },
+      { icon: 'lotus', text: 'Deux hammams de type marocain' },
     ],
+  },
+  plans: {
+    title: 'Nos tarifs',
+    intro: 'Deux salles, un abonnement mensuel. Choisissez votre formule : l’équipe vous rappelle pour finaliser l’inscription et le paiement.',
+    perMonth: 'FCFA / mois',
+    registration: (amount) => `+ ${amount} FCFA de frais d’inscription, payés une seule fois`,
+    items: {
+      standard: {
+        name: 'Standard',
+        tagline: 'La première salle du club : 615 m² de musculation et de cours collectifs.',
+        features: [
+          'Accès illimité à la première salle',
+          'Salle de musculation et salle de cours collectifs',
+          'Ouvert 7 jours sur 7 dès 5h30',
+        ],
+        cta: 'S’abonner à Standard',
+      },
+      vip: {
+        name: 'VIP',
+        badge: 'Premium',
+        tagline: 'La nouvelle salle : 441 m² équipés Technogym, avec hammams.',
+        features: [
+          'Accès illimité à la nouvelle salle',
+          'Free Weight Zone et machines Technogym',
+          'Deux hammams de type marocain',
+        ],
+        cta: 'S’abonner à VIP',
+      },
+    },
+    offer: {
+      lines: [
+        { text: 'Engagez-vous' },
+        { text: '3 mois ou plus', accent: true },
+      ],
+      text: 'Pour tout abonnement de 3 mois ou plus, des mois supplémentaires vous sont offerts.',
+      cta: 'Demander l’offre',
+    },
+    note: 'Tarifs mensuels en FCFA. Les frais d’inscription ne sont payés qu’à la première inscription. Conditions à confirmer à l’accueil du club.',
   },
   location: {
     lines: [
@@ -184,6 +235,10 @@ export default {
       hammam: 'Le hammam',
       autre: 'Autre chose',
     },
+    plan: 'Formule souhaitée',
+    planUndecided: 'Je ne sais pas encore',
+    planOption: (name, price) => `${name} : ${price} FCFA / mois`,
+    planChosen: (name) => `Formule choisie : ${name}.`,
     message: 'Votre message',
     optional: 'facultatif',
     submit: 'Envoyer ma demande',

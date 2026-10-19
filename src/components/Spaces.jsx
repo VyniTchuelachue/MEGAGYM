@@ -2,6 +2,13 @@ import { images } from '../data/images.js';
 import { useLang } from '../lang.js';
 import Photo from './Photo.jsx';
 
+// Where each card crops its photo, so the subject stays in frame.
+const focus = {
+  musculation: 'object-[25%_50%]',
+  cardio: 'object-center',
+  cours: 'object-center',
+};
+
 export default function Spaces() {
   const { t } = useLang();
   return (
@@ -18,7 +25,7 @@ export default function Spaces() {
                 src={images[item.key]}
                 alt={item.alt}
                 sizes="(min-width: 48rem) 33vw, 100vw"
-                className="absolute inset-0 -z-20 size-full object-cover"
+                className={`absolute inset-0 -z-20 size-full object-cover ${focus[item.key]}`}
               />
               <div
                 aria-hidden="true"

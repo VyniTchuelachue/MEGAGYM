@@ -27,7 +27,7 @@ export default function Hero() {
           <p className="mt-6 max-w-[23rem] text-xl leading-snug sm:text-2xl">{t.hero.sub}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href="#club">{t.hero.primary}</Button>
-            <Button href="#abonnement" variant="outline">
+            <Button href="#tarifs" variant="outline">
               {t.hero.secondary}
             </Button>
           </div>

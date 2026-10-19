@@ -1,0 +1,71 @@
+{
+  "cardio-rameurs": [
+    640,
+    960
+  ],
+  "cardio-velos": [
+    640,
+    1080
+  ],
+  "coaching-poids": [
+    640,
+    1280,
+    1920
+  ],
+  "coaching-tapis": [
+    640,
+    1280,
+    1920
+  ],
+  "cours-abdos": [
+    640,
+    1280,
+    1600
+  ],
+  "cours-ballons": [
+    640,
+    1280,
+    1598
+  ],
+  "cours-coach": [
+    640,
+    949
+  ],
+  "cours-groupe": [
+    640,
+    1280,
+    1920
+  ],
+  "cours-sol": [
+    640,
+    1080
+  ],
+  "musculation-pompes": [
+    640,
+    1280,
+    1920
+  ],
+  "musculation-poulie": [
+    640,
+    1280,
+    1920
+  ],
+  "nouvelle-salle": [
+    640,
+    1280,
+    1920
+  ],
+  "rpm-velos": [
+    640,
+    960
+  ],
+  "salle-cardio": [
+    640,
+    1024
+  ],
+  "salle-plateau": [
+    640,
+    1280,
+    1920
+  ]
+}
